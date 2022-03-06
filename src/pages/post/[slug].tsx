@@ -1,9 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-
+import Prismic from '@prismicio/client';
 import { getPrismicClient } from '../../services/prismic';
 
 import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
+import Header from '../../components/Header';
 
 interface Post {
   first_publication_date: string | null;
@@ -26,20 +27,31 @@ interface PostProps {
   post: Post;
 }
 
-// export default function Post() {
-//   // TODO
-// }
+export default function Post(): JSX.Element {
+  // TODO
+  return (
+    <>
+      <Header />
+      <h1>Post</h1>
+    </>
+  );
+}
 
-// export const getStaticPaths = async () => {
-//   const prismic = getPrismicClient();
-//   const posts = await prismic.query(TODO);
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+};
 
-//   // TODO
-// };
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const prismic = getPrismicClient();
 
-// export const getStaticProps = async context => {
-//   const prismic = getPrismicClient();
-//   const response = await prismic.getByUID(TODO);
-
-//   // TODO
-// };
+  const oneSlug = String(params.slug);
+  const response = await prismic.getByUID('posts', oneSlug, {});
+  return {
+    props: {
+      post: response,
+    },
+  };
+};

@@ -1,1 +1,55 @@
 // TODO
+.appContainer {
+  margin: 80px auto;
+}
+
+.travellingList {
+  list-style: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.travellingItem {
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.heading_2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-30);
+}
+
+.description {
+  color: var(--gray-50);
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.travellingInfo {
+  margin-top: 25px;
+  color: var(--gray-100);
+  display: flex;
+  svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  time {
+    margin-right: 20px;
+  }
+  time,
+  span {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.loadMorePostsLink {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  color: var(--pink);
+  text-decoration: none;
+  font-weight: 600;
+}

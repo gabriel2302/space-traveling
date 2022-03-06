@@ -2,6 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: var(--black);
 }
 
-// TODO
+:root {
+  --pink: #ff57b2;
+
+  --black: #1a1d23;
+  --white: #fff;
+
+  --gray-30: #f8f8f8;
+  --gray-100: #bbbbbb;
+  --gray-50: #d7d7d7;
+}
