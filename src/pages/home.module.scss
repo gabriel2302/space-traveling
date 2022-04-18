@@ -1,55 +1,66 @@
-// TODO
-.appContainer {
-  margin: 80px auto;
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0.65rem;
+
+  section > button {
+    color: var(--pink);
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-top: 3rem;
+    border: 0;
+    background: transparent;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.7);
+    }
+  }
 }
 
-.travellingList {
-  list-style: none;
-  font-family: 'Inter', sans-serif;
-}
-
-.travellingItem {
-  margin-bottom: 40px;
-  cursor: pointer;
-}
-
-.heading_2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--gray-30);
-}
-
-.description {
-  color: var(--gray-50);
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.travellingInfo {
-  margin-top: 25px;
-  color: var(--gray-100);
-  display: flex;
-  svg {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
+.postContent {
+  & + article {
+    margin-top: 3rem;
   }
 
-  time {
-    margin-right: 20px;
+  &:hover h1 {
+    color: var(--pink);
   }
-  time,
-  span {
-    font-size: 14px;
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  div {
     display: flex;
-    align-items: center;
-  }
-}
 
-.loadMorePostsLink {
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  color: var(--pink);
-  text-decoration: none;
-  font-weight: 600;
+    time {
+      margin-right: 1.5rem;
+      text-transform: capitalize;
+    }
+
+    time,
+    span {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--gray-100);
+
+      svg {
+        height: 1.25rem;
+        width: 1.25rem;
+        color: var(--gray-100);
+        margin-right: 0.5rem;
+      }
+    }
+  }
 }
